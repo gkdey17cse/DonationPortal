@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Donation Receipt</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="p-10 bg-gray-100">
+  <div class="max-w-lg mx-auto bg-white p-8 rounded shadow">
+    <h1 class="text-2xl font-bold mb-4 text-center">Donation Receipt</h1>
+
+    <p><strong>Full Name:</strong> <%= donation.fullName %></p>
+    <p><strong>Address:</strong> <%= donation.address %></p>
+    <p><strong>Mobile:</strong> <%= donation.mobile %></p>
+    <p><strong>Email:</strong> <%= donation.email %></p>
+    <p><strong>Amount (INR):</strong> ₹<%= donation.amountINR %></p>
+    <p><strong>Comment:</strong> <%= donation.comment || '' %></p>
+    <p><strong>Payment Method:</strong> <%= donation.paymentMethod || '' %></p>
+    <p><strong>Date & Time:</strong> <%= donation.date ? donation.date.toLocaleString() : '' %></p>
+
+    <div class="mt-6 flex justify-center">
+      <button onclick="window.print()" class="bg-green-500 text-white px-4 py-2 rounded">Print Receipt</button>
+    </div>
+  </div>
