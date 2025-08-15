@@ -2,3 +2,4 @@ node_modules/*
 *.o
 .env
 *.md
+private/*
