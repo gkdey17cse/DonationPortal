@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sign Up</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 flex justify-center items-center h-screen">
+
+  <form action="/signup" method="POST" id="signupForm" class="bg-white p-8 rounded-lg shadow-md w-96">
+    <h2 class="text-2xl font-bold mb-6 text-center">Create Account</h2>
+
+    <% if (typeof error !== "undefined" && error) { %>
+    <p class="mb-4 text-red-500 text-sm"><%= error %></p>
+    <% } %>
+
+    <input type="text" name="username" placeholder="Username" required class="w-full p-2 mb-4 border border-gray-300 rounded">
+
+    <input type="password" name="password" id="password" placeholder="Password" required class="w-full p-2 mb-4 border border-gray-300 rounded">
+
+    <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" required class="w-full p-2 mb-6 border border-gray-300 rounded">
+
+    <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded">
+      Sign Up
+    </button>
+
+    <p class="mt-4 text-center text-sm">
+      Already have an account? <a href="/login" class="text-blue-500 hover:underline">Login</a>
+    </p>
+  </form>
+
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", function(e) {
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+      if (password !== confirmPassword) {
+        e.preventDefault();
+        alert("Passwords do not match!");
+      }
+    });
+  </script>
+</body>
+
+</html>
