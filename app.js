@@ -238,8 +238,10 @@ app.post("/payment-success", async (req, res) => {
 
 // Start server
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+
+// For Railway / Render / Heroku style hosting
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`✅ Server running at http://localhost:${PORT}`);
 });
 
 // ✅ Export for Vercel
