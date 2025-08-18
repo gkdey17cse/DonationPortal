@@ -67,8 +67,8 @@ function requireLogin(req, res, next) {
 }
 
 // ================== ROUTES ==================
-// app.get("/", (req, res) => res.render("online"));
-app.get("/", (req, res) => res.send("Hello Railway"));
+app.get("/", (req, res) => res.render("online"));
+// app.get("/", (req, res) => res.send("Hello Railway"));
 app.get("/offline", (req, res) => res.render("offline"));
 
 // Admin (protected)
